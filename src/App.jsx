@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Services from './components/Services';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
+import About from './components/About'; // Importujemy komponent Om Oss
 import './App.css';
 
 function App() {
@@ -16,12 +17,17 @@ function App() {
 				<nav className="mt-4">
 					<ul className="flex justify-center space-x-6 text-lg">
 						<li>
+							<Link to="/" className="hover:text-gold">
+								Hjem
+							</Link>
+						</li>
+						<li>
 							<Link to="/services" className="hover:text-gold">
 								Tjenester
 							</Link>
 						</li>
 						<li>
-							<Link to="/" className="hover:text-gold">
+							<Link to="/about" className="hover:text-gold">
 								Om Oss
 							</Link>
 						</li>
@@ -42,6 +48,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/services" element={<Services />} />
+					<Route path="/about" element={<About />} />
 					<Route path="/reviews" element={<Reviews />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
