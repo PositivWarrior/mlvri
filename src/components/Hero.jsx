@@ -5,13 +5,13 @@ function Hero() {
 	return (
 		<section
 			id="hero"
-			className="h-screen bg-gradient-to-r from-[#000000] to-[#3533cd] flex flex-col items-center justify-center text-center text-white space-y-6"
+			className="w-full h-screen bg-gradient-to-r from-[#000000] to-[#3533cd] flex flex-col items-center justify-center text-center text-white"
 		>
 			{/* Obrazek logo z efektem blendowania */}
 			<img
-				src="/images/popeye_strona-removebg-preview.png"
+				src="/images/pop_no_bg.png"
 				alt="ML Vri Logo"
-				className="w-1/2 h-auto mb-4 rounded-full" // Zwiększamy rozmiar, blend-mode i lekka przezroczystość
+				className="w-1/2 h-auto mb-4 rounded-full"
 			/>
 
 			{/* Nagłówek i opis */}
