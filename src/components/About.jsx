@@ -7,7 +7,6 @@ function About() {
 				Om Oss
 			</h2>
 			<div className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl mx-auto">
-				{/* Zdjęcie rodzinne */}
 				<div className="md:w-1/2 w-full">
 					<img
 						src="https://plus.unsplash.com/premium_photo-1682098296872-3512afc090ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGZhbWlseXxlbnwwfHwwfHx8MA%3D%3D"
@@ -15,7 +14,7 @@ function About() {
 						className="rounded-lg shadow-lg w-full h-auto"
 					/>
 				</div>
-				{/* Opis firmy */}
+
 				<div className="md:w-1/2 w-full">
 					<p className="text-lg text-gray-700">
 						ML Vri er en familieeid bedrift, etablert i 2019. Vi

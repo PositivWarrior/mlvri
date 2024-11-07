@@ -13,7 +13,6 @@ function Comments() {
 	const [newComment, setNewComment] = useState('');
 	const [author, setAuthor] = useState('');
 
-	// Funkcja do dodawania komentarza do Firestore
 	const handleAddComment = async () => {
 		if (newComment.trim() && author.trim()) {
 			await addDoc(collection(db, 'comments'), {
@@ -21,12 +20,11 @@ function Comments() {
 				author: author.trim(),
 				createdAt: new Date(),
 			});
-			setNewComment(''); // Czyści pole tekstowe po dodaniu komentarza
-			setAuthor(''); // Czyści pole autora
+			setNewComment('');
+			setAuthor('');
 		}
 	};
 
-	// Pobieranie komentarzy z Firestore w czasie rzeczywistym
 	useEffect(() => {
 		const q = query(
 			collection(db, 'comments'),
@@ -40,7 +38,7 @@ function Comments() {
 			setComments(commentsData);
 		});
 
-		return unsubscribe; // Wyczyszczenie nasłuchu przy demontażu komponentu
+		return unsubscribe;
 	}, []);
 
 	return (
