@@ -31,45 +31,97 @@ function Contact() {
 	};
 
 	return (
-		<section id="contact" className="text-center">
-			<h2 className="text-2xl font-semibold mb-4 text-gold">Kontakt</h2>
-			<form
-				onSubmit={handleSubmit}
-				className="max-w-md mx-auto space-y-4"
-			>
-				<input
-					type="text"
-					name="name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					placeholder="Navn"
-					required
-					className="w-full p-2 border border-lightNavy rounded-md text-navy"
-				/>
-				<input
-					type="email"
-					name="email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					placeholder="E-post"
-					required
-					className="w-full p-2 border border-lightNavy rounded-md text-navy"
-				/>
-				<textarea
-					name="message"
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
-					placeholder="Melding"
-					required
-					className="w-full p-2 border border-lightNavy rounded-md resize-none text-navy"
-				/>
-				<button
-					type="submit"
-					className="bg-gold-gradient text-navy py-2 px-4 rounded-md hover:bg-white-gradient"
-				>
-					Send melding
-				</button>
-			</form>
+		<section id="contact" className="text-center space-y-8">
+			<h2 className="text-3xl font-bold text-center text-gold mb-8 mt-6">
+				Kontakt
+			</h2>
+
+			{/* Układ siatki dla informacji kontaktowych i mapy */}
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{/* Informacje kontaktowe */}
+				<div className="space-y-4 h-full flex flex-col justify-between">
+					<h3 className="text-xl font-semibold text-gold">
+						Kontaktinformasjon
+					</h3>
+					<div className="bg-white p-6 rounded-lg shadow-lg flex-grow">
+						<p>
+							<strong>Telefon:</strong> 998 54 333
+						</p>
+						<p>
+							<strong>E-post:</strong> lukmegnorge@gmail.com
+						</p>
+						<p>
+							<strong>Adresse:</strong> Nordbybråten 16, 1592
+							Våler
+						</p>
+						<p className="mt-4">
+							<strong>Åpningstider:</strong>
+						</p>
+						<p>Mandag - Fredag: 08:00 - 16:00</p>
+						<p>Lørdag - Søndag: Stengt</p>
+					</div>
+				</div>
+
+				{/* Mapa lokalizacji */}
+				<div className="space-y-4 h-full flex flex-col justify-between">
+					<h3 className="text-xl font-semibold text-gold">
+						Lokasjon
+					</h3>
+					<div className="bg-white p-6 rounded-lg shadow-lg flex-grow">
+						<iframe
+							title="LukMeg Location"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1135.4322048629995!2d10.794567840793935!3d59.469736205073105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464159992c1e1107%3A0x2e3a1c6dbe51e407!2sNordbybr%C3%A5ten%2016%2C%201592%20V%C3%A5ler%2C%20Norway!5e0!3m2!1sen!2sus!4v1614356458051!5m2!1sen!2sus"
+							width="100%"
+							height="300"
+							className="rounded-lg border-2 border-lightNavy"
+							allowFullScreen=""
+							loading="lazy"
+						></iframe>
+					</div>
+				</div>
+			</div>
+
+			{/* Formularz kontaktowy na pełną szerokość */}
+			<div className="max-w-5xl mx-auto space-y-4 bg-white p-6 rounded-lg shadow-lg mt-8">
+				<h3 className="text-xl font-semibold text-gold text-center">
+					Send oss en melding
+				</h3>
+				<form onSubmit={handleSubmit} className="space-y-4">
+					<input
+						type="text"
+						name="name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+						placeholder="Navn"
+						required
+						className="w-full p-2 border border-lightNavy rounded-md text-navy"
+					/>
+					<input
+						type="email"
+						name="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						placeholder="E-post"
+						required
+						className="w-full p-2 border border-lightNavy rounded-md text-navy"
+					/>
+					<textarea
+						name="message"
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+						placeholder="Melding"
+						required
+						className="w-full p-2 border border-lightNavy rounded-md resize-none text-navy"
+						rows="4"
+					/>
+					<button
+						type="submit"
+						className="bg-gold-gradient text-navy py-2 px-4 rounded-md hover:bg-white-gradient"
+					>
+						Send melding
+					</button>
+				</form>
+			</div>
 		</section>
 	);
 }
