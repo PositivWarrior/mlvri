@@ -12,16 +12,19 @@ function Comments() {
 	const [comments, setComments] = useState([]);
 	const [newComment, setNewComment] = useState('');
 	const [author, setAuthor] = useState('');
+	const [rating, setRating] = useState(0);
 
 	const handleAddComment = async () => {
 		if (newComment.trim() && author.trim()) {
 			await addDoc(collection(db, 'comments'), {
 				text: newComment.trim(),
 				author: author.trim(),
+				rating: rating, // zapisujemy ocenę
 				createdAt: new Date(),
 			});
 			setNewComment('');
 			setAuthor('');
+			setRating(0); // resetujemy ocenę
 		}
 	};
 
@@ -40,6 +43,22 @@ function Comments() {
 
 		return unsubscribe;
 	}, []);
+
+	// Funkcja renderująca gwiazdki na podstawie oceny
+	const renderStars = (count) => {
+		const stars = [];
+		for (let i = 1; i <= 5; i++) {
+			stars.push(
+				<span
+					key={i}
+					className={i <= count ? 'text-gold' : 'text-gray-300'}
+				>
+					★
+				</span>,
+			);
+		}
+		return stars;
+	};
 
 	return (
 		<section id="comments" className="text-center mb-10">
@@ -61,6 +80,24 @@ function Comments() {
 					className="w-full p-2 border border-gray-300 rounded-md resize-none mb-4 text-navy"
 					rows="3"
 				/>
+				<div className="flex items-center justify-center space-x-2 mb-4">
+					<span className="text-navy">Din vurdering:</span>
+					<div className="flex space-x-1">
+						{[1, 2, 3, 4, 5].map((num) => (
+							<span
+								key={num}
+								onClick={() => setRating(num)}
+								className={`cursor-pointer ${
+									num <= rating
+										? 'text-gold'
+										: 'text-gray-300'
+								}`}
+							>
+								★
+							</span>
+						))}
+					</div>
+				</div>
 				<button
 					onClick={handleAddComment}
 					className="bg-gold-gradient text-navy py-2 px-4 rounded-md hover:bg-white-gradient"
@@ -82,7 +119,11 @@ function Comments() {
 										comment.createdAt.seconds * 1000,
 									).toLocaleString()}
 								</p>
-								<p>{comment.text}</p>
+								<p className="mt-1">{comment.text}</p>
+								<div className="mt-2">
+									{/* Wyświetlanie oceny w formie gwiazdek */}
+									{renderStars(comment.rating)}
+								</div>
 							</div>
 						</div>
 					))

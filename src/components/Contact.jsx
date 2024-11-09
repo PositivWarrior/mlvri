@@ -37,7 +37,7 @@ function Contact() {
 			</h2>
 
 			{/* Układ siatki dla informacji kontaktowych i mapy */}
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-6">
 				{/* Informacje kontaktowe */}
 				<div className="space-y-4 h-full flex flex-col justify-between">
 					<h3 className="text-xl font-semibold text-gold">
