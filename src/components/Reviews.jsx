@@ -19,12 +19,12 @@ function Comments() {
 			await addDoc(collection(db, 'comments'), {
 				text: newComment.trim(),
 				author: author.trim(),
-				rating: rating, // zapisujemy ocenę
+				rating: rating,
 				createdAt: new Date(),
 			});
 			setNewComment('');
 			setAuthor('');
-			setRating(0); // resetujemy ocenę
+			setRating(0);
 		}
 	};
 
@@ -44,7 +44,6 @@ function Comments() {
 		return unsubscribe;
 	}, []);
 
-	// Funkcja renderująca gwiazdki na podstawie oceny
 	const renderStars = (count) => {
 		const stars = [];
 		for (let i = 1; i <= 5; i++) {
@@ -121,7 +120,6 @@ function Comments() {
 								</p>
 								<p className="mt-1">{comment.text}</p>
 								<div className="mt-2">
-									{/* Wyświetlanie oceny w formie gwiazdek */}
 									{renderStars(comment.rating)}
 								</div>
 							</div>

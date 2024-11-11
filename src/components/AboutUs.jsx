@@ -14,7 +14,7 @@ function AboutUs() {
 			</h2>
 			<p className="text-lg max-w-3xl mx-auto text-center text-gray-700 mb-12">
 				Erfarne håndverkere og kvalitetsmessig arbeid. ML Vri er et
-				bygge- og renoveringsfirma som består av et dyktig team av
+				flytte- og renoveringsfirma som består av et dyktig team av
 				fagfolk som kun bruker de beste materialene. Våre ansatte sikrer
 				gode resultater og tilbyr en solid arbeidsmoral for hvert
 				prosjekt som gjennomføres. Alt vi jobber med er bygget på et
