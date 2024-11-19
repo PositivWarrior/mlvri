@@ -12,6 +12,7 @@ function ServicesOverview() {
 			<h2 className="text-3xl font-bold text-center text-gold mb-6">
 				Hva kan vi hjelpe deg med?
 			</h2>
+
 			<p className="text-lg max-w-3xl mx-auto text-center text-gray-700 mb-12">
 				Vi utfører det meste av tradisjonelle tømrertjenester. Ta en
 				titt på hva vi kan hjelpe deg med nedenfor, og kontakt oss for

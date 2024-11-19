@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function Services() {
 	const services = [
@@ -29,33 +30,54 @@ function Services() {
 	];
 
 	return (
-		<section id="services" className="p-8 bg-white text-navy">
-			<h2 className="text-3xl font-bold text-center text-gold mb-8">
-				Våre Tjenester
-			</h2>
-			<div className="grid md:grid-cols-2 gap-8">
-				{services.map((service, index) => (
-					<div
-						key={index}
-						className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
-					>
-						<img
-							src={service.image}
-							alt={service.title}
-							className="w-full h-56 object-cover"
-						/>
-						<div className="p-6">
-							<h3 className="text-xl font-semibold text-gold mb-2">
-								{service.title}
-							</h3>
-							<p className="text-gray-700">
-								{service.description}
-							</p>
+		<>
+			<Helmet>
+				<title>Våre Tjenester – ML Vri</title>
+				<meta
+					name="description"
+					content="Utforsk våre profesjonelle tjenester innen flytting og oppussing. Vi tilbyr rehabilitering, tilbygg, nybygg, og transporttjenester."
+				/>
+				<meta
+					name="keywords"
+					content="tjenester, flytting, oppussing, rehabilitering, tilbygg, nybygg"
+				/>
+				<meta property="og:title" content="Våre Tjenester – ML Vri" />
+				<meta
+					property="og:description"
+					content="Utforsk våre tjenester innen flytting og oppussing. Profesjonell og trygg hjelp for alle prosjekter."
+				/>
+				<meta property="og:image" content="/images/services.jpg" />
+				<link rel="canonical" href="https://yourdomain.com/services" />
+			</Helmet>
+			<section></section>
+			<section id="services" className="p-8 bg-white text-navy">
+				<h2 className="text-3xl font-bold text-center text-gold mb-8">
+					Våre Tjenester
+				</h2>
+				<div className="grid md:grid-cols-2 gap-8">
+					{services.map((service, index) => (
+						<div
+							key={index}
+							className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
+						>
+							<img
+								src={service.image}
+								alt={service.title}
+								className="w-full h-56 object-cover"
+							/>
+							<div className="p-6">
+								<h3 className="text-xl font-semibold text-gold mb-2">
+									{service.title}
+								</h3>
+								<p className="text-gray-700">
+									{service.description}
+								</p>
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
-		</section>
+					))}
+				</div>
+			</section>
+		</>
 	);
 }
 

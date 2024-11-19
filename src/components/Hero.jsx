@@ -9,7 +9,7 @@ function Hero() {
 		>
 			<img
 				src="/images/pop_no_bg.png"
-				alt="ML Vri Logo"
+				alt="ML Vri Logo for flytte- og oppussingstjenester"
 				className="w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-auto mb-4 rounded-full"
 			/>
 
