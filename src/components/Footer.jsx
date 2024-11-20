@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
 	return (
-		<footer className="bg-gradient-to-r from-[#000000] to-[#3533cd] text-white py-4 mt-8">
+		<footer className="bg-gradient-to-r from-[#000000] to-[#3533cd] text-white py-4">
 			<div className="text-center">
 				<p className="text-sm">
 					© 2024 Kacper Margol. All rights reserved.

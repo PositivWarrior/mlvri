@@ -52,16 +52,16 @@ function Contact() {
 				<link rel="canonical" href="https://yourdomain.com/contact" />
 				<script type="application/ld+json">
 					{`
-	{
-		"@context": "https://schema.org",
-		"@type": "ContactPoint",
-		"telephone": "99854333",
-		"contactType": "customer service",
-		"email": "lukmegnorge@gmail.com",
-		"areaServed": "NO",
-		"availableLanguage": ["Norwegian", "English"]
-	}
-	`}
+						{
+							"@context": "https://schema.org",
+							"@type": "ContactPoint",
+							"telephone": "99854333",
+							"contactType": "customer service",
+							"email": "lukmegnorge@gmail.com",
+							"areaServed": "NO",
+							"availableLanguage": ["Norwegian", "English"]
+						}
+					`}
 				</script>
 			</Helmet>
 			<section id="contact" className="text-center space-y-8">
@@ -69,8 +69,9 @@ function Contact() {
 					Kontakt
 				</h2>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-6">
-					<div className="space-y-4 h-full flex flex-col justify-between">
+				{/* Informacje kontaktowe i lokalizacja */}
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+					<div className="space-y-4 flex flex-col h-full">
 						<h3 className="text-xl font-semibold text-gold">
 							Kontaktinformasjon
 						</h3>
@@ -93,7 +94,7 @@ function Contact() {
 						</div>
 					</div>
 
-					<div className="space-y-4 h-full flex flex-col justify-between">
+					<div className="space-y-4 flex flex-col h-full">
 						<h3 className="text-xl font-semibold text-gold">
 							Lokasjon
 						</h3>
@@ -111,8 +112,9 @@ function Contact() {
 					</div>
 				</div>
 
-				<div className="max-w-5xl mx-auto space-y-4 bg-white p-6 rounded-lg shadow-lg mt-8">
-					<h3 className="text-xl font-semibold text-gold text-center">
+				{/* Formularz kontaktowy */}
+				<div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+					<h3 className="text-xl font-semibold text-gold text-center mb-4">
 						Send oss en melding
 					</h3>
 					<form onSubmit={handleSubmit} className="space-y-4">
