@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import {
+	PhoneIcon,
+	EnvelopeIcon,
+	MapPinIcon,
+	ClockIcon,
+} from '@heroicons/react/24/outline';
 import { Helmet } from 'react-helmet';
 
 function Contact() {
@@ -69,28 +75,49 @@ function Contact() {
 					Kontakt
 				</h2>
 
-				{/* Informacje kontaktowe i lokalizacja */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-					<div className="space-y-4 flex flex-col h-full">
-						<h3 className="text-xl font-semibold text-gold">
+					<div className="bg-white p-6 rounded-lg shadow-lg flex-grow space-y-6">
+						<h3 className="text-xl font-semibold text-gold text-center mb-4">
 							Kontaktinformasjon
 						</h3>
-						<div className="bg-white p-6 rounded-lg shadow-lg flex-grow">
-							<p>
+						<div className="flex items-center space-x-4">
+							<PhoneIcon className="text-gold w-6 h-6" />
+							<p className="text-gray-700 text-lg">
 								<strong>Telefon:</strong> 998 54 333
 							</p>
-							<p>
+						</div>
+						<div className="flex items-center space-x-4">
+							<EnvelopeIcon className="text-gold w-6 h-6" />
+							<p className="text-gray-700 text-lg">
 								<strong>E-post:</strong> lukmegnorge@gmail.com
 							</p>
-							<p>
+						</div>
+						<div className="flex items-center space-x-4">
+							<MapPinIcon className="text-gold w-6 h-6" />
+							<p className="text-gray-700 text-lg">
 								<strong>Adresse:</strong> Nordbybråten 16, 1592
 								Våler
 							</p>
-							<p className="mt-4">
-								<strong>Åpningstider:</strong>
-							</p>
-							<p>Mandag - Fredag: 08:00 - 16:00</p>
-							<p>Lørdag - Søndag: Stengt</p>
+						</div>
+						<div>
+							<h4 className="text-lg font-semibold text-navy">
+								Åpningstider:
+							</h4>
+							<div className="space-y-4 mt-4">
+								<div className="flex items-center space-x-4">
+									<ClockIcon className="text-gold w-6 h-6" />
+									<p className="text-gray-700 text-lg">
+										<strong>Mandag - Fredag:</strong> 08:00
+										- 16:00
+									</p>
+								</div>
+								<div className="flex items-center space-x-4">
+									<ClockIcon className="text-gold w-6 h-6" />
+									<p className="text-gray-700 text-lg">
+										<strong>Lørdag - Søndag:</strong> Stengt
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -112,7 +139,6 @@ function Contact() {
 					</div>
 				</div>
 
-				{/* Formularz kontaktowy */}
 				<div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
 					<h3 className="text-xl font-semibold text-gold text-center mb-4">
 						Send oss en melding
