@@ -21,6 +21,19 @@ function About() {
 				/>
 				<meta property="og:image" content="/images/about.jpg" />
 				<link rel="canonical" href="https://yourdomain.com/about" />
+				<script type="application/ld+json">
+					{`
+	{
+		"@context": "https://schema.org",
+		"@type": "ContactPoint",
+		"telephone": "99854333",
+		"contactType": "customer service",
+		"email": "lukmegnorge@gmail.com",
+		"areaServed": "NO",
+		"availableLanguage": ["Norwegian", "English"]
+	}
+	`}
+				</script>
 			</Helmet>
 			<section id="about" className="p-8 bg-white text-navy">
 				<h2 className="text-3xl font-bold text-center text-gold mb-8">

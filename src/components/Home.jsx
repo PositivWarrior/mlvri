@@ -15,7 +15,7 @@ function Home() {
 				/>
 				<meta
 					name="keywords"
-					content="flytting, oppussing, Norge, håndverkere, ML Vri"
+					content="flytting, oppussing, Norge, håndverkere, ML Vri, LukMeg, Viken, østfold"
 				/>
 				<meta
 					property="og:title"
@@ -27,11 +27,36 @@ function Home() {
 				/>
 				<meta property="og:image" content="/images/pop_no_bg.png" />
 				<meta property="og:type" content="website" />
-				<meta name="author" content="ML Vri" />
+				<meta name="author" content="Kacper Margol" />
 				<link
 					rel="canonical"
 					href="https://positivwarrior.github.io/Portfolio/"
 				/>
+				<script type="application/ld+json">
+					{`
+					{
+						"@context": "https://schema.org",
+						"@type": "LocalBusiness",
+						"name": "ML Vri",
+						"address": {
+							"@type": "PostalAddress",
+							"streetAddress": "Nordbybråten 16",
+							"addressLocality": "Våler",
+							"addressRegion": "NO",
+							"postalCode": "1592"
+						},
+						"telephone": "99854333",
+						"email": "lukmegnorge@gmail.com",
+						"url": "https://yourdomain.com",
+						"image": "/images/pop_no_bg.png",
+						"openingHours": "Mo-Fr 08:00-16:00",
+						"sameAs": [
+							"https://www.linkedin.com/in/kacper-margol-545493195/",
+							"https://github.com/PositivWarrior"
+						]
+					}
+					`}
+				</script>
 			</Helmet>
 			<Hero />
 			<AboutUs />

@@ -48,6 +48,19 @@ function Services() {
 				/>
 				<meta property="og:image" content="/images/services.jpg" />
 				<link rel="canonical" href="https://yourdomain.com/services" />
+				<script type="application/ld+json">
+					{`
+	{
+		"@context": "https://schema.org",
+		"@type": "ContactPoint",
+		"telephone": "99854333",
+		"contactType": "customer service",
+		"email": "lukmegnorge@gmail.com",
+		"areaServed": "NO",
+		"availableLanguage": ["Norwegian", "English"]
+	}
+	`}
+				</script>
 			</Helmet>
 			<section></section>
 			<section id="services" className="p-8 bg-white text-navy">
