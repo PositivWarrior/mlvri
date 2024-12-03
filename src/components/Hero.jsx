@@ -20,7 +20,7 @@ function Hero() {
 		>
 			<motion.img
 				src="/images/pop_no_bg.png"
-				alt="ML Vri Logo for flytte- og oppussingstjenester"
+				alt="LukMeg Logo for flytte- og oppussingstjenester"
 				className="w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-auto mb-4 mt-[-1rem] md:mt-[-1.5rem] rounded-full"
 				variants={logoVariants}
 				initial="hidden"
@@ -34,7 +34,7 @@ function Hero() {
 				animate="visible"
 			>
 				<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold mb-4">
-					Velkommen til ML Vri
+					Velkommen til LukMeg
 				</h1>
 				<p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-md mb-6">
 					Profesjonelle flytte- og oppussingstjenester for hjem og

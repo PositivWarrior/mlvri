@@ -12,7 +12,7 @@ function Navbar() {
 	return (
 		<nav className="bg-gradient-to-r from-[#000000] to-[#3533cd] p-4 flex justify-between items-center">
 			<h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-500">
-				<Link to="/">ML Vri</Link>
+				<Link to="/">LukMeg</Link>
 			</h1>
 
 			<div className="hidden md:flex space-x-4">

@@ -32,7 +32,7 @@ function Services() {
 	return (
 		<>
 			<Helmet>
-				<title>Våre Tjenester – ML Vri</title>
+				<title>Våre Tjenester – LukMeg</title>
 				<meta
 					name="description"
 					content="Utforsk våre profesjonelle tjenester innen flytting og oppussing. Vi tilbyr rehabilitering, tilbygg, nybygg, og transporttjenester."
@@ -41,7 +41,7 @@ function Services() {
 					name="keywords"
 					content="tjenester, flytting, oppussing, rehabilitering, tilbygg, nybygg"
 				/>
-				<meta property="og:title" content="Våre Tjenester – ML Vri" />
+				<meta property="og:title" content="Våre Tjenester – LukMeg" />
 				<meta
 					property="og:description"
 					content="Utforsk våre tjenester innen flytting og oppussing. Profesjonell og trygg hjelp for alle prosjekter."

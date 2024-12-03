@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import {
 	PhoneIcon,
@@ -8,48 +8,64 @@ import {
 } from '@heroicons/react/24/outline';
 import { Helmet } from 'react-helmet';
 
-function Contact() {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [message, setMessage] = useState('');
+const Contact = () => {
+	const formRef = useRef();
+	const [successMessage, setSuccessMessage] = useState('');
+	const [formData, setFormData] = useState({
+		from_name: '',
+		from_email: '',
+		message: '',
+	});
 
-	const handleSubmit = (e) => {
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
+
+	const sendEmail = (e) => {
 		e.preventDefault();
+
 		emailjs
 			.sendForm(
-				'YOUR_SERVICE_ID',
-				'YOUR_TEMPLATE_ID',
-				e.target,
-				'YOUR_USER_ID',
+				'service_nfi11k7',
+				'template_dewkewe',
+				formRef.current,
+				'ouIL0a7IpDVcizQLE',
 			)
 			.then(
-				(result) => {
-					alert('Meldingen din har blitt sendt!');
+				(response) => {
+					console.log('SUCCESS!', response.status, response.text);
+					setSuccessMessage('Meldingen ble sendt!');
+					setFormData({ from_name: '', from_email: '', message: '' });
+					setTimeout(() => setSuccessMessage(''), 5000);
 				},
 				(error) => {
-					alert(
-						'Feil ved sending av meldingen. Vennligst prøv igjen.',
+					console.log('FAILED...', error);
+					setSuccessMessage(
+						'Kunne ikke sende meldingen. Vennligst prøv igjen.',
 					);
 				},
 			);
-		setName('');
-		setEmail('');
-		setMessage('');
+
+		e.target.reset();
 	};
 
 	return (
 		<>
 			<Helmet>
-				<title>Kontakt – ML Vri</title>
+				<title>Kontakt – LukMeg</title>
 				<meta
 					name="description"
 					content="Kontakt oss for å få mer informasjon om våre tjenester. Vi svarer gjerne på dine spørsmål."
 				/>
 				<meta
 					name="keywords"
-					content="kontakt, ML Vri, flyttehjelp, oppussing"
+					content="kontakt, LukMeg, flyttehjelp, oppussing"
 				/>
-				<meta property="og:title" content="Kontakt – ML Vri" />
+				<meta property="og:title" content="Kontakt – LukMeg" />
 				<meta
 					property="og:description"
 					content="Kontakt oss i dag for en uforpliktende samtale. Vi tilbyr profesjonelle flytte- og oppussingstjenester."
@@ -58,16 +74,16 @@ function Contact() {
 				<link rel="canonical" href="https://yourdomain.com/contact" />
 				<script type="application/ld+json">
 					{`
-						{
-							"@context": "https://schema.org",
-							"@type": "ContactPoint",
-							"telephone": "99854333",
-							"contactType": "customer service",
-							"email": "lukmegnorge@gmail.com",
-							"areaServed": "NO",
-							"availableLanguage": ["Norwegian", "English"]
-						}
-					`}
+                        {
+                        "@context": "https://schema.org",
+                        "@type": "ContactPoint",
+                        "telephone": "99854333",
+                        "contactType": "customer service",
+                        "email": "lukmegnorge@gmail.com",
+                        "areaServed": "NO",
+                        "availableLanguage": ["Norwegian", "English"]
+                        }
+                    `}
 				</script>
 			</Helmet>
 			<section id="contact" className="text-center space-y-8">
@@ -75,8 +91,9 @@ function Contact() {
 					Kontakt
 				</h2>
 
+				{/* Contact Information and Location */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-					<div className="bg-white p-6 rounded-lg shadow-lg flex-grow space-y-6">
+					<div className="bg-white p-6 rounded-lg shadow-lg space-y-6">
 						<h3 className="text-xl font-semibold text-gold text-center mb-4">
 							Kontaktinformasjon
 						</h3>
@@ -122,10 +139,10 @@ function Contact() {
 					</div>
 
 					<div className="space-y-4 flex flex-col h-full">
-						<h3 className="text-xl font-semibold text-gold">
+						<h3 className="text-xl font-semibold text-gold text-center">
 							Lokasjon
 						</h3>
-						<div className="bg-white p-6 rounded-lg shadow-lg flex-grow">
+						<div className="bg-white p-6 rounded-lg shadow-lg">
 							<iframe
 								title="LukMeg Location"
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1135.4322048629995!2d10.794567840793935!3d59.469736205073105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464159992c1e1107%3A0x2e3a1c6dbe51e407!2sNordbybr%C3%A5ten%2016%2C%201592%20V%C3%A5ler%2C%20Norway!5e0!3m2!1sen!2sus!4v1614356458051!5m2!1sen!2sus"
@@ -139,49 +156,56 @@ function Contact() {
 					</div>
 				</div>
 
+				{/* Contact Form */}
 				<div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
 					<h3 className="text-xl font-semibold text-gold text-center mb-4">
 						Send oss en melding
 					</h3>
-					<form onSubmit={handleSubmit} className="space-y-4">
+					<form
+						ref={formRef}
+						onSubmit={sendEmail}
+						className="space-y-4"
+					>
 						<input
 							type="text"
-							name="name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
+							name="from_name"
 							placeholder="Navn"
+							value={formData.from_name}
+							onChange={handleInputChange}
 							required
 							className="w-full p-2 border border-lightNavy rounded-md text-navy"
 						/>
 						<input
 							type="email"
-							name="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							name="from_email"
 							placeholder="E-post"
+							value={formData.from_email}
+							onChange={handleInputChange}
 							required
 							className="w-full p-2 border border-lightNavy rounded-md text-navy"
 						/>
 						<textarea
 							name="message"
-							value={message}
-							onChange={(e) => setMessage(e.target.value)}
 							placeholder="Melding"
+							value={formData.message}
+							onChange={handleInputChange}
 							required
 							className="w-full p-2 border border-lightNavy rounded-md resize-none text-navy"
 							rows="4"
 						/>
-						<button
-							type="submit"
-							className="bg-gold-gradient text-navy py-2 px-4 rounded-md hover:bg-white-gradient"
-						>
+						<button className="bg-gold-gradient text-navy py-2 px-4 rounded-md transition-transform duration-300 hover:scale-105 hover:shadow-md focus:outline-none">
 							Send melding
 						</button>
 					</form>
+					{successMessage && (
+						<p className="mt-4 text-center text-green-500">
+							{successMessage}
+						</p>
+					)}
 				</div>
 			</section>
 		</>
 	);
-}
+};
 
 export default Contact;
