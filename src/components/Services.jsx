@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function Services() {
 	const services = [
@@ -77,6 +77,9 @@ function Services() {
 								src={service.image}
 								alt={service.title}
 								className="w-full h-56 object-cover"
+								loading="lazy"
+								width="800"
+								height="450"
 							/>
 							<div className="p-6">
 								<h3 className="text-xl font-semibold text-gold mb-2">

@@ -20,8 +20,11 @@ function Hero() {
 		>
 			<motion.img
 				src="/images/pop_no_bg.png"
-				alt="LukMeg Logo for flytte- og oppussingstjenester"
+				alt="LukMeg Logo"
 				className="w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-auto mb-4 mt-[-1rem] md:mt-[-1.5rem] rounded-full"
+				width="320"
+				height="320"
+				loading="lazy"
 				variants={logoVariants}
 				initial="hidden"
 				animate="visible"
@@ -50,6 +53,7 @@ function Hero() {
 				<Link
 					to="/services"
 					className="bg-gold-gradient text-navy py-3 px-6 rounded-md text-lg font-semibold hover:bg-white-gradient mb-4"
+					aria-label="Learn more about our services"
 				>
 					Utforsk Våre Tjenester
 				</Link>

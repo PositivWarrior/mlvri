@@ -6,7 +6,7 @@ import {
 	MapPinIcon,
 	ClockIcon,
 } from '@heroicons/react/24/outline';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
 	const formRef = useRef();
@@ -193,7 +193,11 @@ const Contact = () => {
 							className="w-full p-2 border border-lightNavy rounded-md resize-none text-navy"
 							rows="4"
 						/>
-						<button className="bg-gold-gradient text-navy py-2 px-4 rounded-md transition-transform duration-300 hover:scale-105 hover:shadow-md focus:outline-none">
+						<button
+							type="submit"
+							className="bg-gold-gradient text-navy py-2 px-4 rounded-md transition-transform duration-300 hover:scale-105 hover:shadow-md focus:outline-none"
+							aria-label="Send melding"
+						>
 							Send melding
 						</button>
 					</form>

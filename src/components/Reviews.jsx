@@ -7,7 +7,7 @@ import {
 	orderBy,
 	query,
 } from 'firebase/firestore';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function Comments() {
 	const [comments, setComments] = useState([]);
@@ -133,6 +133,7 @@ function Comments() {
 					<button
 						onClick={handleAddComment}
 						className="bg-gold-gradient text-navy py-2 px-4 rounded-md transition-transform duration-300 hover:scale-105 hover:shadow-md focus:outline-none"
+						aria-label="Legg til omtale"
 					>
 						Legg til omtale
 					</button>

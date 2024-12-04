@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, Suspense } from 'react';
 import Tile from './Tile';
 import {
 	ClipboardDocumentListIcon,
@@ -7,12 +7,19 @@ import {
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 
+// Memoized Tile Component for Performance Optimization
+const MemoizedTile = memo(({ icon, title, description }) => (
+	<Tile icon={icon} title={title} description={description} />
+));
+
 function AboutUs() {
+	// Animation Variants for Tiles
 	const tileVariants = (direction) => ({
 		hidden: { opacity: 0, x: direction === 'left' ? -100 : 100 },
 		visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 	});
 
+	// Tile Data
 	const tiles = [
 		{
 			icon: ClipboardDocumentListIcon,
@@ -35,11 +42,21 @@ function AboutUs() {
 	];
 
 	return (
-		<section id="about-us" className="p-8 bg-white text-navy">
-			<h2 className="text-3xl font-bold text-center text-gold mb-6">
+		<section
+			id="about-us"
+			className="p-8 bg-white text-gray-800"
+			aria-labelledby="about-us-heading"
+		>
+			<h2
+				id="about-us-heading"
+				className="text-3xl font-bold text-center text-gold mb-6"
+			>
 				Hvem er vi?
 			</h2>
-			<p className="text-lg max-w-3xl mx-auto text-center text-gray-700 mb-12">
+			<p
+				className="text-lg max-w-3xl mx-auto text-center text-gray-700 mb-12"
+				style={{ fontSize: '1.125rem', lineHeight: '1.75rem' }}
+			>
 				Erfarne håndverkere og kvalitetsmessig arbeid. LukMeg er et
 				flytte- og renoveringsfirma som består av et dyktig team av
 				fagfolk som kun bruker de beste materialene. Våre ansatte sikrer
@@ -48,7 +65,10 @@ function AboutUs() {
 				solid fundament som betyr at det er bygget for å vare i årevis.
 			</p>
 
-			<div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+			<div
+				className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
+				aria-label="Våre verdier"
+			>
 				{tiles.map((tile, index) => (
 					<motion.div
 						key={index}
@@ -59,7 +79,7 @@ function AboutUs() {
 						whileInView="visible"
 						viewport={{ once: true, amount: 0.3 }}
 					>
-						<Tile
+						<MemoizedTile
 							icon={tile.icon}
 							title={tile.title}
 							description={tile.description}

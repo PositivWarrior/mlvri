@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function About() {
 	return (
@@ -42,9 +42,11 @@ function About() {
 				<div className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl mx-auto">
 					<div className="md:w-1/2 w-full">
 						<img
-							src="https://plus.unsplash.com/premium_photo-1682098296872-3512afc090ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGZhbWlseXxlbnwwfHwwfHx8MA%3D%3D"
+							src="https://plus.unsplash.com/premium_photo-1682098296872-3512afc090ab?w=800&auto=format&fit=crop&q=60"
 							alt="Familie firma LukMeg"
 							className="rounded-lg shadow-lg w-full h-auto"
+							width="800"
+							height="600"
 						/>
 					</div>
 
