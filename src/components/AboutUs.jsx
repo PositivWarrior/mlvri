@@ -1,11 +1,11 @@
-import React, { memo, Suspense } from 'react';
-import Tile from './Tile';
+import React, { memo } from 'react';
+import { Tile } from './Tile';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import {
 	ClipboardDocumentListIcon,
 	ShieldCheckIcon,
 	PhoneIcon,
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
 
 // Memoized Tile Component for Performance Optimization
 const MemoizedTile = memo(({ icon, title, description }) => (
@@ -15,8 +15,12 @@ const MemoizedTile = memo(({ icon, title, description }) => (
 function AboutUs() {
 	// Animation Variants for Tiles
 	const tileVariants = (direction) => ({
-		hidden: { opacity: 0, x: direction === 'left' ? -100 : 100 },
-		visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+		hidden: { opacity: 0, x: direction === 'left' ? -50 : 50 },
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: { duration: 0.4 },
+		},
 	});
 
 	// Tile Data
@@ -25,19 +29,19 @@ function AboutUs() {
 			icon: ClipboardDocumentListIcon,
 			title: 'Kundene i fokus',
 			description:
-				'Vi har et stort fokus på god kommunikasjon og godt samarbeid med våre kunder, og tilpasser oss etter dine behov for å sikre at du får det resultatet du ser for deg.',
+				'Vi har et stort fokus på god kommunikasjon og godt samarbeid med våre kunder...',
 		},
 		{
 			icon: ShieldCheckIcon,
 			title: 'Godt utført arbeid',
 			description:
-				'Vi er opptatt av godt håndverk, kvalitet og fagkunnskap i arbeidet vi utfører, og yter alltid vårt beste for å gjøre en god jobb for våre kunder.',
+				'Vi er opptatt av godt håndverk, kvalitet og fagkunnskap...',
 		},
 		{
 			icon: PhoneIcon,
 			title: 'Motta et tilbud',
 			description:
-				'Vi kommer gjerne på en befaring for å vurdere ditt prosjekt. Kontakt oss gjerne for avtale, og motta et uforpliktende tilbud fra oss.',
+				'Vi tilbyr en uforpliktende befaring for å diskutere ditt prosjekt...',
 		},
 	];
 
@@ -65,28 +69,35 @@ function AboutUs() {
 				solid fundament som betyr at det er bygget for å vare i årevis.
 			</p>
 
-			<div
-				className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
-				aria-label="Våre verdier"
-			>
-				{tiles.map((tile, index) => (
-					<motion.div
-						key={index}
-						variants={tileVariants(
-							index % 2 === 0 ? 'left' : 'right',
-						)}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.3 }}
-					>
-						<MemoizedTile
-							icon={tile.icon}
-							title={tile.title}
-							description={tile.description}
-						/>
-					</motion.div>
-				))}
-			</div>
+			{/* LazyMotion only applies to non-LCP elements */}
+			<LazyMotion features={domAnimation}>
+				<div
+					className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
+					aria-label="Våre verdier"
+				>
+					{tiles.map((tile, index) => (
+						<m.div
+							key={index}
+							variants={tileVariants(
+								index % 2 === 0 ? 'left' : 'right',
+							)}
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, amount: 0.3 }}
+							style={{
+								width: '100%', // Prevent layout shifts
+								minHeight: '180px', // Set a minimum height for tiles
+							}}
+						>
+							<MemoizedTile
+								icon={tile.icon}
+								title={tile.title}
+								description={tile.description}
+							/>
+						</m.div>
+					))}
+				</div>
+			</LazyMotion>
 		</section>
 	);
 }
