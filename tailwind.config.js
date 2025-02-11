@@ -1,12 +1,12 @@
-module.exports = {
+export default {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
 			colors: {
-				navy: '#001f3f', // Granatowy
-				gold: '#FFD700', // Złoty
+				navy: '#001f3f',
+				gold: '#FFD700',
 				white: '#ffffff',
-				lightNavy: '#0a2a4d', // Jasny odcień granatowego
+				lightNavy: '#0a2a4d',
 			},
 			backgroundImage: {
 				'navy-gradient':

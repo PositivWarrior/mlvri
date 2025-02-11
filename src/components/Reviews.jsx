@@ -7,7 +7,7 @@ import {
 	orderBy,
 	query,
 } from 'firebase/firestore';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function Comments() {
 	const [comments, setComments] = useState([]);
@@ -63,19 +63,19 @@ function Comments() {
 	return (
 		<>
 			<Helmet>
-				<title>Omtaler – ML Vri</title>
+				<title>Omtaler – LukMeg</title>
 				<meta
 					name="description"
-					content="Se hva våre kunder sier om oss! Les omtalene og del dine egne erfaringer med ML Vri."
+					content="Se hva våre kunder sier om oss! Les omtalene og del dine egne erfaringer med LukMeg."
 				/>
 				<meta
 					name="keywords"
-					content="omtaler, kundeanmeldelser, tilbakemeldinger, ML Vri"
+					content="omtaler, kundeanmeldelser, tilbakemeldinger, LukMeg"
 				/>
-				<meta property="og:title" content="Omtaler – ML Vri" />
+				<meta property="og:title" content="Omtaler – LukMeg" />
 				<meta
 					property="og:description"
-					content="Kundeomtaler og tilbakemeldinger om ML Vri. Del din erfaring!"
+					content="Kundeomtaler og tilbakemeldinger om LukMeg. Del din erfaring!"
 				/>
 				<meta property="og:image" content="/images/reviews.jpg" />
 				<link rel="canonical" href="https://yourdomain.com/reviews" />
@@ -132,7 +132,8 @@ function Comments() {
 					</div>
 					<button
 						onClick={handleAddComment}
-						className="bg-gold-gradient text-navy py-2 px-4 rounded-md hover:bg-white-gradient"
+						className="bg-gold-gradient text-navy py-2 px-4 rounded-md transition-transform duration-300 hover:scale-105 hover:shadow-md focus:outline-none"
+						aria-label="Legg til omtale"
 					>
 						Legg til omtale
 					</button>

@@ -18,19 +18,19 @@ function ServicesOverview() {
 			icon: CogIcon,
 			title: 'Rehabilitering',
 			description:
-				'Skal du pusse opp? Vi i ML Vri utfører renovasjon og rehabilitering på gamle boliger og byggverk, og gir deg råd og veiledning for å finne ut hvilke deler av huset som må prioriteres for utskifting.',
+				'Skal du pusse opp? Vi i LukMeg utfører renovasjon og rehabilitering på gamle boliger og byggverk, og gir deg råd og veiledning for å finne ut hvilke deler av huset som må prioriteres for utskifting.',
 		},
 		{
 			icon: BuildingOfficeIcon,
 			title: 'Tilbygg',
 			description:
-				'Planlegger du å utvide og trenger et ekstra soverom eller kanskje en vinterhage? ML Vri fører opp tilbygg og påbygg etter dine behov og ønsker.',
+				'Planlegger du å utvide og trenger et ekstra soverom eller kanskje en vinterhage? LukMeg fører opp tilbygg og påbygg etter dine behov og ønsker.',
 		},
 		{
 			icon: HomeIcon,
 			title: 'Nybygg',
 			description:
-				'Har du en tomt og skal bygge nytt? ML Vri hjelper deg med å realisere boligdrømmen og bistår deg gjennom hele prosessen.',
+				'Har du en tomt og skal bygge nytt? LukMeg hjelper deg med å realisere boligdrømmen og bistår deg gjennom hele prosessen.',
 		},
 	];
 

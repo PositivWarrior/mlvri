@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function Services() {
 	const services = [
@@ -32,7 +32,7 @@ function Services() {
 	return (
 		<>
 			<Helmet>
-				<title>Våre Tjenester – ML Vri</title>
+				<title>Våre Tjenester – LukMeg</title>
 				<meta
 					name="description"
 					content="Utforsk våre profesjonelle tjenester innen flytting og oppussing. Vi tilbyr rehabilitering, tilbygg, nybygg, og transporttjenester."
@@ -41,7 +41,7 @@ function Services() {
 					name="keywords"
 					content="tjenester, flytting, oppussing, rehabilitering, tilbygg, nybygg"
 				/>
-				<meta property="og:title" content="Våre Tjenester – ML Vri" />
+				<meta property="og:title" content="Våre Tjenester – LukMeg" />
 				<meta
 					property="og:description"
 					content="Utforsk våre tjenester innen flytting og oppussing. Profesjonell og trygg hjelp for alle prosjekter."
@@ -77,6 +77,9 @@ function Services() {
 								src={service.image}
 								alt={service.title}
 								className="w-full h-56 object-cover"
+								loading="lazy"
+								width="800"
+								height="450"
 							/>
 							<div className="p-6">
 								<h3 className="text-xl font-semibold text-gold mb-2">
