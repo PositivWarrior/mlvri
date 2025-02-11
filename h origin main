@@ -1,0 +1,24 @@
+*   [33mcc5a5b3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Merge remote-tracking branch 'origin/main'
+[31m|[m[32m\[m  
+[31m|[m * [33mcfd2bb8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix config for vercel deployment
+[31m|[m * [33m30ec827[m Pre Vercel config
+[31m|[m * [33m299f970[m Lighthouse opitimalisation pt1
+[31m|[m * [33m3686825[m readme.md add
+[31m|[m * [33ma4854d7[m name change and minor styling changes
+* [32m|[m [33m5fa093c[m Remove default React test file
+* [32m|[m [33me38dbd4[m Update Footer portfolio link to personal website
+[32m|[m[32m/[m  
+* [33m61e5061[m contact info placement and icons add
+* [33m9250468[m minor styling improvements, hero motion add
+* [33m370c08b[m meta headers add
+* [33me1de06d[m SEO optimalization start
+* [33med9b9e0[m minor cleanup
+* [33m2ecfd5a[m Star rating add
+* [33mc325f0d[m contact info and map add to Contact page
+* [33m9b9e11f[m styling, sizing, navbar hamburger
+* [33m9ecad16[m firebase db cofig for comments
+* [33m9e21b77[m styling, hero divided into smaller components
+* [33m3225741[m home page sections add
+* [33ma0c83f2[m styling and structure add, pics add
+* [33m1fa3030[m initial setup with folder structure, tailwind add, basic styling add
+* [33m69fd50c[m Initial commit
