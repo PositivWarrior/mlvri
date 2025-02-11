@@ -10,7 +10,7 @@ function Footer() {
 
 				<div className="flex justify-center space-x-4 mt-4">
 					<a
-						href="https://positivwarrior.github.io/Portfolio/"
+						href="https://kacpermargol.eu"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-gold"
