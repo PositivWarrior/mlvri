@@ -1,5 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Redirect non-www to www
+  RewriteCond %{HTTP_HOST} ^lukmeg\.no [NC]
+  RewriteRule ^(.*)$ https://www.lukmeg.no/$1 [L,R=301]
+
+  # Existing React Router rules
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
